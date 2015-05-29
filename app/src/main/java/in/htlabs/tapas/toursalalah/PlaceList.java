@@ -19,32 +19,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-import in.htlabs.tapas.toursalalah.adapter.CustomListAdapter;
+import in.htlabs.tapas.toursalalah.adapter.CustomPListAdapter;
 import in.htlabs.tapas.toursalalah.app.AppController;
-import in.htlabs.tapas.toursalalah.model.Hotel;
+import in.htlabs.tapas.toursalalah.model.TPlace;
 
 
 /**
  * Created by Tapas on 5/24/2015.
  */
-public class HotelList extends Activity {
+public class PlaceList extends Activity {
 
     // Log tag
-    private static final String TAG = HotelList.class.getSimpleName();
+    private static final String TAG = PlaceList.class.getSimpleName();
 
     // Movies json url
-    private static final String url = "http://www.htlabs.in/student/salalahguide/hotels.php";
+    private static final String url = "http://www.htlabs.in/student/salalahguide/places.php";
     private ProgressDialog pDialog;
-    private List<Hotel> hotelList = new ArrayList<Hotel>();
+    private List<TPlace> placeList = new ArrayList<TPlace>();
     private ListView listView;
-    private CustomListAdapter adapter;
+    private CustomPListAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.hotel_list);
-        listView = (ListView) findViewById(R.id.list_hotel);
-        adapter = new CustomListAdapter(this, hotelList);
+        setContentView(R.layout.place_list);
+        listView = (ListView) findViewById(R.id.list_place);
+        adapter = new CustomPListAdapter(this, placeList);
         listView.setAdapter(adapter);
         pDialog = new ProgressDialog(this);
         // Showing progress dialog before making http request
@@ -67,16 +67,16 @@ public class HotelList extends Activity {
                         for (int j = 0; j < pArray.length(); j++) {
 
                             JSONObject pro = pArray.getJSONObject(j);
-                            Hotel item = new Hotel();
-                            item.setHName(pro.getString("h_name"));
-                            item.setHImageUrl(pro.getString("h_img"));
-                            item.setHDetails(pro.getString("h_details"));
-                            item.setHId(pro.getString("h_id"));
-                            item.setHLat(pro.getString("h_lat"));
-                            item.setHLon(pro.getString("h_lon"));
+                            TPlace item = new TPlace();
+                            item.setPName(pro.getString("p_name"));
+                            item.setPImageUrl(pro.getString("p_img"));
+                            item.setPDetails(pro.getString("p_details"));
+                            item.setPId(pro.getString("p_id"));
+                            item.setPLat(pro.getString("p_lat"));
+                            item.setPLon(pro.getString("p_lon"));
 
                             // adding movie to movies array
-                            hotelList.add(item);
+                            placeList.add(item);
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();

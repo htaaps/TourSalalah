@@ -8,7 +8,7 @@
     android:padding="20dp"    >
 
     <Button
-        android:id="@+id/ho_bt_places"
+        android:id="@+id/ho_bt_place"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dip"
@@ -19,7 +19,7 @@
         android:gravity="center"/>
 
     <Button
-        android:id="@+id/ho_bt_hotels"
+        android:id="@+id/ho_bt_hotel"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dip"

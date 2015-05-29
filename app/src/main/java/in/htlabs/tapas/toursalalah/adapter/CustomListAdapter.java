@@ -1,4 +1,4 @@
-package in.htlabs.tapas.toursalalah.adater;
+package in.htlabs.tapas.toursalalah.adapter;
 
 import android.app.Activity;
 import android.content.Context;

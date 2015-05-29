@@ -19,32 +19,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-import in.htlabs.tapas.toursalalah.adapter.CustomListAdapter;
+import in.htlabs.tapas.toursalalah.adapter.CustomRListAdapter;
 import in.htlabs.tapas.toursalalah.app.AppController;
-import in.htlabs.tapas.toursalalah.model.Hotel;
+import in.htlabs.tapas.toursalalah.model.Restaurant;
 
 
 /**
  * Created by Tapas on 5/24/2015.
  */
-public class HotelList extends Activity {
+public class RestaurantList extends Activity {
 
     // Log tag
-    private static final String TAG = HotelList.class.getSimpleName();
+    private static final String TAG = RestaurantList.class.getSimpleName();
 
     // Movies json url
-    private static final String url = "http://www.htlabs.in/student/salalahguide/hotels.php";
+    private static final String url = "http://www.htlabs.in/student/salalahguide/restaurant.php";
     private ProgressDialog pDialog;
-    private List<Hotel> hotelList = new ArrayList<Hotel>();
+    private List<Restaurant> restaurantList = new ArrayList<Restaurant>();
     private ListView listView;
-    private CustomListAdapter adapter;
+    private CustomRListAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.hotel_list);
-        listView = (ListView) findViewById(R.id.list_hotel);
-        adapter = new CustomListAdapter(this, hotelList);
+        setContentView(R.layout.restaurant_list);
+        listView = (ListView) findViewById(R.id.list_restaurant);
+        adapter = new CustomRListAdapter(this, restaurantList);
         listView.setAdapter(adapter);
         pDialog = new ProgressDialog(this);
         // Showing progress dialog before making http request
@@ -67,16 +67,16 @@ public class HotelList extends Activity {
                         for (int j = 0; j < pArray.length(); j++) {
 
                             JSONObject pro = pArray.getJSONObject(j);
-                            Hotel item = new Hotel();
-                            item.setHName(pro.getString("h_name"));
-                            item.setHImageUrl(pro.getString("h_img"));
-                            item.setHDetails(pro.getString("h_details"));
-                            item.setHId(pro.getString("h_id"));
-                            item.setHLat(pro.getString("h_lat"));
-                            item.setHLon(pro.getString("h_lon"));
+                            Restaurant item = new Restaurant();
+                            item.setRName(pro.getString("r_name"));
+                            item.setRImageUrl(pro.getString("r_img"));
+                            item.setRDetails(pro.getString("r_details"));
+                            item.setRId(pro.getString("r_id"));
+                            item.setRLat(pro.getString("r_lat"));
+                            item.setRLon(pro.getString("r_lon"));
 
                             // adding movie to movies array
-                            hotelList.add(item);
+                            restaurantList.add(item);
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();

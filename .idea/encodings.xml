@@ -2,6 +2,11 @@
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/app/src/debug/res/values/colors.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/adapter/CustomListAdapter.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/app/AppController.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/model/Hotel.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/model/Restaurant.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/util/LruBitmapCache.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/b.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/bl.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/br.jpg" charset="UTF-8" />
@@ -13,7 +18,6 @@
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/s_6.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/s_7.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/y.png" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/home.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/hotel_list.xml" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/hotel_list_row.xml" charset="windows-1252" />

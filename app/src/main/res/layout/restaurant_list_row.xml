@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_row_selector"
+    android:padding="8dp" >
+
+    <!-- Thumbnail Image -->
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/r_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="8dp" />
+
+    <!-- Product Name -->
+    <TextView
+        android:id="@+id/r_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/h_image"
+        android:layout_toRightOf="@+id/h_image"
+        android:textSize="@dimen/title"
+        android:textStyle="bold" />
+
+    <!-- Product Details -->
+    <TextView
+        android:id="@+id/r_details"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/h_name"
+        android:layout_marginTop="1dip"
+        android:layout_toRightOf="@+id/h_image"
+        android:textSize="@dimen/rating" />
+
+</RelativeLayout>
