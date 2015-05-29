@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/app/src/debug/res/values/colors.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/JSONParser.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/adapter/CustomListAdapter.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/app/AppController.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/model/Hotel.java" charset="windows-1252" />

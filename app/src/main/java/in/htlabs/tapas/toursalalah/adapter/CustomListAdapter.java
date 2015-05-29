@@ -62,7 +62,7 @@ public class CustomListAdapter extends BaseAdapter {
 			imageLoader = AppController.getInstance().getImageLoader();
 		NetworkImageView h_image = (NetworkImageView) convertView.findViewById(R.id.h_image);
 		TextView h_name          = (TextView) convertView.findViewById(R.id.h_name);
-		TextView h_details       = (TextView) convertView.findViewById(R.id.h_details);
+
 
 		// getting movie data for the row
 		h = hotelItems.get(position);
@@ -73,10 +73,6 @@ public class CustomListAdapter extends BaseAdapter {
 		// title
 		h_name.setText(h.getHName());
 		
-		// rating
-		h_details.setText(h.getHDetails());
-
-
 
 		convertView.setOnClickListener(new View.OnClickListener() {
 

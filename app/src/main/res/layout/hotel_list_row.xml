@@ -8,8 +8,8 @@
     <!-- Thumbnail Image -->
     <com.android.volley.toolbox.NetworkImageView
         android:id="@+id/h_image"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignParentLeft="true"
         android:layout_marginRight="8dp" />
 
@@ -22,15 +22,5 @@
         android:layout_toRightOf="@+id/h_image"
         android:textSize="@dimen/title"
         android:textStyle="bold" />
-
-    <!-- Product Details -->
-    <TextView
-        android:id="@+id/h_details"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/h_name"
-        android:layout_marginTop="1dip"
-        android:layout_toRightOf="@+id/h_image"
-        android:textSize="@dimen/rating" />
 
 </RelativeLayout>

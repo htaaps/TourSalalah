@@ -62,7 +62,6 @@ public class CustomRListAdapter extends BaseAdapter {
             imageLoader = AppController.getInstance().getImageLoader();
         NetworkImageView r_image = (NetworkImageView) convertView.findViewById(R.id.r_image);
         TextView r_name          = (TextView) convertView.findViewById(R.id.r_name);
-        TextView r_details       = (TextView) convertView.findViewById(R.id.r_details);
 
         // getting movie data for the row
         r = restaurantItems.get(position);
@@ -72,10 +71,6 @@ public class CustomRListAdapter extends BaseAdapter {
 
         // title
         r_name.setText(r.getRName());
-
-        // rating
-        r_details.setText(r.getRDetails());
-
 
 
         convertView.setOnClickListener(new View.OnClickListener() {

@@ -64,7 +64,6 @@ public class CustomPListAdapter extends BaseAdapter {
             imageLoader = AppController.getInstance().getImageLoader();
         NetworkImageView p_image = (NetworkImageView) convertView.findViewById(R.id.p_image);
         TextView p_name          = (TextView) convertView.findViewById(R.id.p_name);
-        TextView p_details       = (TextView) convertView.findViewById(R.id.p_details);
 
         // getting movie data for the row
         p = placeItems.get(position);
@@ -74,10 +73,6 @@ public class CustomPListAdapter extends BaseAdapter {
 
         // title
         p_name.setText(p.getPName());
-
-        // rating
-        p_details.setText(p.getPDetails());
-
 
 
         convertView.setOnClickListener(new View.OnClickListener() {

@@ -18,19 +18,10 @@
         android:id="@+id/r_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/h_image"
-        android:layout_toRightOf="@+id/h_image"
+        android:layout_alignTop="@+id/r_image"
+        android:layout_toRightOf="@+id/r_image"
         android:textSize="@dimen/title"
         android:textStyle="bold" />
 
-    <!-- Product Details -->
-    <TextView
-        android:id="@+id/r_details"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/h_name"
-        android:layout_marginTop="1dip"
-        android:layout_toRightOf="@+id/h_image"
-        android:textSize="@dimen/rating" />
 
 </RelativeLayout>
