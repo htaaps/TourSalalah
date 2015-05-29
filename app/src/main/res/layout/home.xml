@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/s_1"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp"    >
+
+    <Button
+        android:id="@+id/ho_bt_places"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dip"
+        android:background="@color/bt_bg"
+        android:text="@string/places"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/ho_bt_hotels"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dip"
+        android:background="@color/bt_bg"
+        android:text="@string/hotels"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/ho_bt_res"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dip"
+        android:background="@color/bt_bg"
+        android:text="@string/restaurants"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/ho_bt_tran"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dip"
+        android:background="@color/bt_bg"
+        android:text="@string/transport"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/ho_bt_tour"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dip"
+        android:background="@color/bt_bg"
+        android:text="@string/tour"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:gravity="center"/>
+
+
+    <Button
+        android:id="@+id/ho_bt_exit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dip"
+        android:background="@color/bt_bg"
+        android:text="@string/exit"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:gravity="center"/>
+</LinearLayout>

@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">TourSalalah</string>
+    <string name="title_activity_maps">TourSalalah</string>
+    <string name="hello_world">TourSalalah</string>
+
+
+    <string name="places">Places</string>
+    <string name="hotels">Hotels</string>
+    <string name="restaurants">Restaurants</string>
+    <string name="transport">Transport</string>
+    <string name="tour">Tour package</string>
+    <string name="exit">Exit</string>
+
+    <string name="email">Email address</string>
+    <string name="password">*********</string>
+    <string name="repassword">**********</string>
+    <string name="name">Enter your name</string>
+    <string name="mobile">Enter your mobile number</string>
+
+
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_register">REGISTER</string>
+    <string name="btn_link_to_register">Not a member? Sign up now.</string>
+    <string name="btn_link_to_login">Already registred! Login Me.</string>
+    <string name="welcome">Welcome</string>
+    <string name="btn_accept">Agree</string>
+    <string name="btn_deny">Deny</string>
+
+
+</resources>
