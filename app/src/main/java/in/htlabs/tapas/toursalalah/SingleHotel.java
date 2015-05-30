@@ -60,9 +60,7 @@ public class SingleHotel extends Activity implements View.OnClickListener{
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.si_h_map:
-                Intent intent = new Intent(this,MapsActivity.class);
-                intent.putExtra("h_lat",h_lat);
-                intent.putExtra("h_lon",h_lon);
+                Intent intent = new Intent(this,Login.class);
                 startActivity(intent);
                 break;
         }

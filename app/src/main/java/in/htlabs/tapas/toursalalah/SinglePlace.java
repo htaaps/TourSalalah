@@ -60,8 +60,6 @@ public class SinglePlace extends Activity implements View.OnClickListener{
         switch(v.getId()){
             case R.id.si_p_map:
                 Intent intent = new Intent(this,MapsActivity.class);
-                intent.putExtra("p_lat",p_lat);
-                intent.putExtra("p_lon",p_lon);
                 startActivity(intent);
                 break;
         }

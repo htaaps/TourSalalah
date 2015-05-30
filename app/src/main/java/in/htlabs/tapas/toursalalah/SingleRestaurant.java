@@ -60,8 +60,6 @@ public class SingleRestaurant extends Activity implements View.OnClickListener{
         switch(v.getId()){
             case R.id.si_r_map:
                 Intent intent = new Intent(this,MapsActivity.class);
-                intent.putExtra("r_lat",r_lat);
-                intent.putExtra("r_lon",r_lon);
                 startActivity(intent);
                 break;
         }

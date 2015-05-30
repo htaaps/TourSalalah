@@ -63,6 +63,18 @@
             android:name=".SingleRestaurant"
             android:label="@string/title_activity_maps" >
         </activity>
+        <activity
+            android:name=".Login"
+            android:label="@string/title_activity_maps" >
+        </activity>
+        <activity
+            android:name=".Register"
+            android:label="@string/title_activity_maps" >
+        </activity>
+        <activity
+            android:name=".HotelBooking"
+            android:label="@string/title_activity_maps" >
+        </activity>
     </application>
 
 </manifest>
