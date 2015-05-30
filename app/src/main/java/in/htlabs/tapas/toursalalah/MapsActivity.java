@@ -6,12 +6,15 @@ import android.os.AsyncTask;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -28,7 +31,7 @@ import in.htlabs.tapas.toursalalah.model.Hotel;
 import in.htlabs.tapas.toursalalah.model.Restaurant;
 import in.htlabs.tapas.toursalalah.model.TPlace;
 
-public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarkerClickListener {
+public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarkerClickListener, View.OnClickListener {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
     private List<Hotel> hotelList = new ArrayList<Hotel>();
@@ -37,17 +40,93 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
     private  Marker mPlace[],mRes[],mHotel[];
     private static final double SLAT=17.0197;
     private static final double SLON=54.0897;
-
+    private Intent i;
+    private Button am_btn_booking;
+    private static int selection=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+        am_btn_booking=(Button)findViewById(R.id.am_btn_booking);
+        am_btn_booking.setOnClickListener(this);
         new GetAllLocations().execute();
     }
 
     @Override
+    public void onClick(View v) {
+        switch ((v.getId())){
+            case R.id.am_btn_booking:
+                switch(selection){
+                    case 0:
+                        Toast.makeText(MapsActivity.this,"Please select a hotel or restaurant or place or car for booking",
+                                Toast.LENGTH_LONG).show();
+                        break;
+                    case 1:
+                        i=new Intent(MapsActivity.this,HotelList.class);
+                        startActivity(i);
+
+                        break;
+                    case 2:
+                        i=new Intent(MapsActivity.this,PlaceList.class);
+                        startActivity(i);
+
+                        break;
+                    case 3:
+                        i=new Intent(MapsActivity.this,RestaurantList.class);
+                        startActivity(i);
+
+                        break;
+                }
+                break;
+        }
+    }
+
+    @Override
     public boolean onMarkerClick(Marker marker) {
+        if (marker.equals(mHotel[0])){
+            selection=1;
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(hotelList.get(0).getHLat()),
+                    Double.parseDouble(hotelList.get(0).getHLon())), 17));
+
+        }else if(marker.equals(mHotel[1])){
+            selection=1;
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(hotelList.get(1).getHLat()),
+                    Double.parseDouble(hotelList.get(1).getHLon())), 17));
+        }else if(marker.equals(mHotel[2])){
+            selection=1;
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(hotelList.get(2).getHLat()),
+                    Double.parseDouble(hotelList.get(2).getHLon())), 17));
+        }else if(marker.equals(mPlace[0])){
+            selection=2;
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(placeList.get(0).getPLat()),
+                    Double.parseDouble(placeList.get(0).getPLon())), 17));
+
+        }else if(marker.equals(mPlace[1])){
+            selection=2;
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(placeList.get(1).getPLat()),
+                    Double.parseDouble(placeList.get(1).getPLon())), 17));
+        }else if(marker.equals(mPlace[2])){
+            selection=2;
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(placeList.get(2).getPLat()),
+                    Double.parseDouble(placeList.get(2).getPLon())), 17));
+        }else if(marker.equals(mRes[0])){
+            selection=3;
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(restaurantList.get(0).getRLat()),
+                    Double.parseDouble(restaurantList.get(0).getRLon())), 17));
+
+        }else if(marker.equals(mRes[1])){
+            selection=3;
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(restaurantList.get(1).getRLat()),
+                    Double.parseDouble(restaurantList.get(1).getRLon())), 17));
+        }else if(marker.equals(mRes[2])){
+            selection=3;
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(restaurantList.get(2).getRLat()),
+                    Double.parseDouble(restaurantList.get(2).getRLon())), 17));
+        }else{
+            selection=0;
+        }
+
         return false;
     }
 
@@ -75,26 +154,26 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
         mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
 
         LatLng salalah = new LatLng(SLAT,SLON);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(salalah, 8));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(salalah, 10));
 
 
         for(int j=0;j<hotelList.size();j++){
             lat=Double.parseDouble(hotelList.get(j).getHLat());
             lon=Double.parseDouble(hotelList.get(j).getHLon());
             mHotel[j]=mMap.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).title(hotelList.get(j).getHName())
-                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher)));
+                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.hotel)));
         }
         for(int j=0;j<placeList.size();j++){
             lat=Double.parseDouble(placeList.get(j).getPLat());
             lon=Double.parseDouble(placeList.get(j).getPLon());
             mPlace[j]=mMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)).title(placeList.get(j).getPName())
-                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher)));
+                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.chair)));
         }
         for(int j=0;j<restaurantList.size();j++){
             lat=Double.parseDouble(restaurantList.get(j).getRLat());
             lon=Double.parseDouble(restaurantList.get(j).getRLon());
             mRes[j]=mMap.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).title(restaurantList.get(j).getRName())
-                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher)));
+                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.restaurant)));
         }
 
     }
