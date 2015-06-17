@@ -2,9 +2,7 @@
 <project version="4">
   <component name="Encoding" useUTFGuessing="false" native2AsciiForPropertiesFiles="false" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/app/src/debug/res/values/colors.xml" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/CarBooking.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/CarList.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/CustomRListAdapter.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/JSONParser.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/RestaurantBooking.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/RestaurantList.java" charset="windows-1252" />
@@ -52,4 +50,3 @@
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
-
