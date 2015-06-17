@@ -50,12 +50,12 @@
             android:gravity="center"/>
 
         <EditText
-            android:id="@+id/hb_et_table"
+            android:id="@+id/hb_et_room"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:background="@color/bg_reg_lvbg"
-            android:hint="no of rooms"
+            android:hint="no of table"
             android:inputType="textEmailAddress"
             android:padding="10dp"
             android:singleLine="true"

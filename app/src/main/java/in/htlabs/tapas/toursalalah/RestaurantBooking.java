@@ -39,7 +39,11 @@ public class RestaurantBooking extends Activity implements View.OnClickListener 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+<<<<<<< HEAD
         setContentView(R.layout.restuarant_booking);
+=======
+        setContentView(R.layout.restaurant_booking);
+>>>>>>> origin/master
         hb_et_cin=(EditText)findViewById(R.id.hb_et_cin);
         hb_et_cout=(EditText)findViewById(R.id.hb_et_cout);
         hb_et_table=(EditText)findViewById(R.id.hb_et_table);
