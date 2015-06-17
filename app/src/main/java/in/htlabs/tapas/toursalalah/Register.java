@@ -220,4 +220,10 @@ public class Register extends Activity implements  View.OnClickListener, View.On
             }
         }
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
+    }
 }

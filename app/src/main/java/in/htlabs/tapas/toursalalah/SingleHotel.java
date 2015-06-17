@@ -66,4 +66,10 @@ public class SingleHotel extends Activity implements View.OnClickListener{
                 break;
         }
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
+    }
 }

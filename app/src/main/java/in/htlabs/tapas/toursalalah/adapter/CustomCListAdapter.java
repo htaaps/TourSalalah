@@ -30,6 +30,7 @@ public class CustomCListAdapter extends BaseAdapter {
     private List<Car> carItems;
     Car c;
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
+    public static String car_selection=null;
 
     public CustomCListAdapter(Activity activity, List<Car> carItems) {
         this.activity = activity;
@@ -83,6 +84,7 @@ public class CustomCListAdapter extends BaseAdapter {
                 // Get the position
                 c = carItems.get(position);
                 Intent intent = new Intent(activity, SingleCar.class);
+                car_selection=c.getCId();
                 // Pass all data rank
                 intent.putExtra("c_name", c.getCName());
                 // Pass all data country

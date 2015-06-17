@@ -39,6 +39,7 @@ public class HotelList extends Activity {
     private ListView listView;
     private CustomListAdapter adapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

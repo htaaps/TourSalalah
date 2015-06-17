@@ -26,5 +26,7 @@
     <string name="btn_accept">Agree</string>
     <string name="btn_deny">Deny</string>
 
+    <string name="btn_book">Book Now</string>
+    <string name="btn_map">Show in Map</string>
 
 </resources>

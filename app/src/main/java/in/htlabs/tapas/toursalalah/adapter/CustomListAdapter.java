@@ -27,6 +27,7 @@ public class CustomListAdapter extends BaseAdapter {
 	private List<Hotel> hotelItems;
 	Hotel h;
 	ImageLoader imageLoader = AppController.getInstance().getImageLoader();
+	public static String hotel_selection=null;
 
 	public CustomListAdapter(Activity activity, List<Hotel> hotelItems) {
 		this.activity = activity;
@@ -81,6 +82,7 @@ public class CustomListAdapter extends BaseAdapter {
 				// Get the position
 				h = hotelItems.get(position);
 				Intent intent = new Intent(activity, SingleHotel.class);
+				hotel_selection = h.getHId();
 				// Pass all data rank
 				intent.putExtra("h_name", h.getHName());
 				// Pass all data country

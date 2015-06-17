@@ -26,6 +26,7 @@ public class Login extends Activity implements View.OnClickListener {
 
     private EditText lo_et_user, lo_et_pass;
     private Button lo_bt_login,lo_bt_register;
+    public static String user_selection=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +76,7 @@ public class Login extends Activity implements View.OnClickListener {
         // JSON IDS:
         private static final String TAG_SUCCESS = "success";
         private static final String TAG_MESSAGE = "message";
+        private static final String TAG_USER_ID = "u_id";
 
         /**
          * Before starting background thread Show Progress Dialog
@@ -110,16 +112,17 @@ public class Login extends Activity implements View.OnClickListener {
 
                 if (success == 1) {
                     Log.d("Login Successful!", json.toString());
+                    Login.user_selection=json.getString(TAG_USER_ID);
                     if(MainActivity.selection==1) {
                         Intent i = new Intent(Login.this, HotelBooking.class);
                         startActivity(i);
                     }
                     else if(MainActivity.selection==2) {
-                        Intent i = new Intent(Login.this, HotelBooking.class);
+                        Intent i = new Intent(Login.this, RestaurantBooking.class);
                         startActivity(i);
                     }
                     else if(MainActivity.selection==3) {
-                        Intent i = new Intent(Login.this, HotelBooking.class);
+                        Intent i = new Intent(Login.this, CarBooking.class);
                         startActivity(i);
                     }
                     else{
@@ -147,5 +150,11 @@ public class Login extends Activity implements View.OnClickListener {
                 Toast.makeText(Login.this, file_url, Toast.LENGTH_LONG).show();
             }
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
     }
 }

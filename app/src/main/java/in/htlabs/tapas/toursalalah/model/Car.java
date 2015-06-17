@@ -23,7 +23,7 @@ public class Car {
         return c_id;
     }
 
-    public void setCId(String h_id) {
+    public void setCId(String c_id) {
         this.c_id = c_id;
     }
 

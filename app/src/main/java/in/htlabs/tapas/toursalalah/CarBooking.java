@@ -26,13 +26,13 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
-import in.htlabs.tapas.toursalalah.adapter.CustomRListAdapter;
+import in.htlabs.tapas.toursalalah.adapter.CustomCListAdapter;
 
 /**
- * Created by usertajalain on 09/06/2015.
+ * Created by Tapas on 6/17/2015.
  */
-public class RestaurantBooking extends Activity implements View.OnClickListener {
-    EditText rb_et_date,rb_et_time,rb_et_table;
+public class CarBooking extends Activity implements View.OnClickListener {
+    EditText cb_et_date,cb_et_time;
 
     Button rb_bt_submit;
 
@@ -41,19 +41,17 @@ public class RestaurantBooking extends Activity implements View.OnClickListener 
 
     private SimpleDateFormat dateFormatter;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.restaurant_booking);
+        setContentView(R.layout.car_booking);
 
-        rb_et_date=(EditText)findViewById(R.id.rb_et_date);
-        rb_et_time=(EditText)findViewById(R.id.rb_et_time);
-        rb_et_table=(EditText)findViewById(R.id.rb_et_table);
-        rb_bt_submit=(Button)findViewById(R.id.rb_bt_submit);
+        cb_et_date=(EditText)findViewById(R.id.cb_et_date);
+        cb_et_time=(EditText)findViewById(R.id.cb_et_time);
+        rb_bt_submit=(Button)findViewById(R.id.cb_bt_submit);
 
-        rb_et_date.setOnClickListener(this);
-        rb_et_time.setOnClickListener(this);
+        cb_et_date.setOnClickListener(this);
+        cb_et_time.setOnClickListener(this);
         rb_bt_submit.setOnClickListener(this);
 
         dateFormatter = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
@@ -65,34 +63,34 @@ public class RestaurantBooking extends Activity implements View.OnClickListener 
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                 Calendar newDate = Calendar.getInstance();
                 newDate.set(year, monthOfYear, dayOfMonth);
-                rb_et_date.setText(dateFormatter.format(newDate.getTime()));
+                cb_et_date.setText(dateFormatter.format(newDate.getTime()));
             }
 
         },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
 
         timePickerDialog = new TimePickerDialog(this,new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker view, int hourOfDay,int minute) {
-                        rb_et_time.setText(hourOfDay + ":" + minute);
-                    }
-                }, newCalendar.get(Calendar.HOUR_OF_DAY), newCalendar.get(Calendar.MINUTE), false);
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay,int minute) {
+                cb_et_time.setText(hourOfDay + ":" + minute);
+            }
+        }, newCalendar.get(Calendar.HOUR_OF_DAY), newCalendar.get(Calendar.MINUTE), false);
     }
     @Override
     public void onClick(View v) {
         switch(v.getId()){
-            case R.id.rb_et_date:
+            case R.id.cb_et_date:
                 datePickerDialog.show();
                 break;
-            case R.id.rb_et_time:
+            case R.id.cb_et_time:
                 timePickerDialog.show();
                 break;
-            case R.id.rb_bt_submit:
-                new BookRestaurant().execute();
+            case R.id.cb_bt_submit:
+                new BookCar().execute();
                 break;
         }
     }
 
-    class BookRestaurant extends AsyncTask<String, String, String> {
+    class BookCar extends AsyncTask<String, String, String> {
 
         // Progress Dialog
         private ProgressDialog pDialog;
@@ -102,7 +100,7 @@ public class RestaurantBooking extends Activity implements View.OnClickListener 
 
         //testing from a real server:
         //private static final String REGISTER_URL = "http://www.yourdomain.com/webservice/login.php";
-        private static final String REGISTER_URL = "http://www.htlabs.in/student/salalahguide/restuarant_booking.php";
+        private static final String REGISTER_URL = "http://www.htlabs.in/student/salalahguide/car_booking.php";
 
         // JSON IDS:
         private static final String TAG_SUCCESS = "success";
@@ -116,8 +114,8 @@ public class RestaurantBooking extends Activity implements View.OnClickListener 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(RestaurantBooking.this);
-            pDialog.setMessage("Registering user to server...");
+            pDialog = new ProgressDialog(CarBooking.this);
+            pDialog.setMessage("Booking a car pls wait...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
             pDialog.show();
@@ -127,21 +125,19 @@ public class RestaurantBooking extends Activity implements View.OnClickListener 
         protected String doInBackground(String... args) {
             // TODO Auto-generated method stub
             // Check for success tag
-            String r_id,u_id,date_of_book,time_of_book,no_of_table;
-            r_id= CustomRListAdapter.restaurant_selection;
+            String c_id,u_id,date_of_book,time_of_book;
+            c_id= CustomCListAdapter.car_selection;
             u_id=Login.user_selection;
-            date_of_book=rb_et_date.getText().toString();
-            time_of_book=rb_et_time.getText().toString();
-            no_of_table=rb_et_table.getText().toString();
+            date_of_book=cb_et_date.getText().toString();
+            time_of_book=cb_et_time.getText().toString();
 
             int success;
             try {
                 // Building Parameters
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
-                params.add(new BasicNameValuePair("r_id", r_id));
+                params.add(new BasicNameValuePair("c_id", c_id));
                 params.add(new BasicNameValuePair("date_of_book",date_of_book));
                 params.add(new BasicNameValuePair("time_of_book", time_of_book));
-                params.add(new BasicNameValuePair("no_of_table", no_of_table));
                 params.add(new BasicNameValuePair("u_id", u_id));
 
                 // getting product details by making HTTP request
@@ -168,9 +164,9 @@ public class RestaurantBooking extends Activity implements View.OnClickListener 
             // dismiss the dialog once product deleted
             pDialog.dismiss();
             if (file_url != null){
-                Toast.makeText(RestaurantBooking.this, file_url, Toast.LENGTH_LONG).show();
+                Toast.makeText(CarBooking.this, file_url, Toast.LENGTH_LONG).show();
             }
-            Intent i=new Intent(RestaurantBooking.this,MainActivity.class);
+            Intent i=new Intent(CarBooking.this,MainActivity.class);
             startActivity(i);
         }
     }

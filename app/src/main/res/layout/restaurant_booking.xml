@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/s_3"
+    android:background="@drawable/s_4"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="10dp"    >
@@ -18,12 +18,12 @@
         android:paddingBottom="20dp">
 
         <EditText
-            android:id="@+id/hb_et_cin"
+            android:id="@+id/rb_et_date"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:background="@color/bg_reg_lvbg"
-            android:hint="checkin date"
+            android:hint="date_of_book"
             android:inputType="textEmailAddress"
             android:padding="10dp"
             android:singleLine="true"
@@ -34,12 +34,12 @@
             android:gravity="center"/>
 
         <EditText
-            android:id="@+id/hb_et_cout"
+            android:id="@+id/rb_et_time"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:background="@color/bg_reg_lvbg"
-            android:hint="checkout date"
+            android:hint="time_of_book"
             android:inputType="textEmailAddress"
             android:padding="10dp"
             android:singleLine="true"
@@ -50,28 +50,12 @@
             android:gravity="center"/>
 
         <EditText
-            android:id="@+id/hb_et_room"
+            android:id="@+id/rb_et_table"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:background="@color/bg_reg_lvbg"
-            android:hint="no of table"
-            android:inputType="textEmailAddress"
-            android:padding="10dp"
-            android:singleLine="true"
-            android:layout_marginTop="20dip"
-            android:textColor="@color/input_login"
-            android:textColorHint="@color/input_login_hint"
-            android:textSize="20dp"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/hb_et_adult"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@color/bg_reg_lvbg"
-            android:hint="no of adults"
+            android:hint="no_of_table"
             android:inputType="textEmailAddress"
             android:padding="10dp"
             android:singleLine="true"
@@ -82,25 +66,10 @@
             android:gravity="center"/>
 
 
-        <EditText
-            android:id="@+id/hb_et_child"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@color/bg_reg_lvbg"
-            android:hint="no of child"
-            android:inputType="textEmailAddress"
-            android:padding="10dp"
-            android:singleLine="true"
-            android:layout_marginTop="20dip"
-            android:textColor="@color/input_login"
-            android:textColorHint="@color/input_login_hint"
-            android:textSize="20dp"
-            android:gravity="center"/>
 
         <!-- Login Button -->
         <Button
-            android:id="@+id/hb_bt_submit"
+            android:id="@+id/rb_bt_submit"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dip"

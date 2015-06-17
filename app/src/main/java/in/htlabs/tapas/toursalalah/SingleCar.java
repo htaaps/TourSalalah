@@ -18,15 +18,15 @@ import in.htlabs.tapas.toursalalah.app.AppController;
 public class SingleCar extends Activity implements View.OnClickListener {
     String c_name,c_details,c_image,c_lat,c_lon,price;
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
-    Button si_c_map;
+    Button si_c_book;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Get the view from singleitemview.xml
         setContentView(R.layout.single_car);
-        si_c_map=(Button)findViewById(R.id.si_c_map);
-        si_c_map.setOnClickListener(this);
+        si_c_book=(Button)findViewById(R.id.si_c_book);
+        si_c_book.setOnClickListener(this);
 
 
         Intent i = getIntent();
@@ -61,11 +61,18 @@ public class SingleCar extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch(v.getId()){
-            case R.id.si_c_map:
+            case R.id.si_c_book:
+                MainActivity.selection=3;
                 Intent intent = new Intent(this,Login.class);
                 startActivity(intent);
                 break;
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
     }
 }
 

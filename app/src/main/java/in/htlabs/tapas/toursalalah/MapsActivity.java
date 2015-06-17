@@ -27,6 +27,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import in.htlabs.tapas.toursalalah.model.Car;
 import in.htlabs.tapas.toursalalah.model.Hotel;
 import in.htlabs.tapas.toursalalah.model.Restaurant;
 import in.htlabs.tapas.toursalalah.model.TPlace;
@@ -37,7 +38,8 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
     private List<Hotel> hotelList = new ArrayList<Hotel>();
     private List<TPlace> placeList = new ArrayList<TPlace>();
     private List<Restaurant> restaurantList = new ArrayList<Restaurant>();
-    private  Marker mPlace[],mRes[],mHotel[];
+    private List<Car> carList = new ArrayList<Car>();
+    private  Marker mPlace[],mRes[],mHotel[],mCar[];
     private static final double SLAT=17.0197;
     private static final double SLON=54.0897;
     private Intent i;
@@ -77,6 +79,11 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
                         startActivity(i);
 
                         break;
+                    case 4:
+                        i=new Intent(MapsActivity.this,CarList.class);
+                        startActivity(i);
+
+                        break;
                 }
                 break;
         }
@@ -97,6 +104,14 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
             selection=1;
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(hotelList.get(2).getHLat()),
                     Double.parseDouble(hotelList.get(2).getHLon())), 17));
+        }else if(marker.equals(mHotel[3])){
+            selection=1;
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(hotelList.get(3).getHLat()),
+                    Double.parseDouble(hotelList.get(3).getHLon())), 17));
+        }else if(marker.equals(mHotel[4])){
+            selection=1;
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(hotelList.get(4).getHLat()),
+                    Double.parseDouble(hotelList.get(4).getHLon())), 17));
         }else if(marker.equals(mPlace[0])){
             selection=2;
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(placeList.get(0).getPLat()),
@@ -110,6 +125,14 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
             selection=2;
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(placeList.get(2).getPLat()),
                     Double.parseDouble(placeList.get(2).getPLon())), 17));
+        }else if(marker.equals(mPlace[3])){
+            selection=2;
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(placeList.get(3).getPLat()),
+                    Double.parseDouble(placeList.get(3).getPLon())), 17));
+        }else if(marker.equals(mPlace[4])){
+            selection=2;
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(placeList.get(4).getPLat()),
+                    Double.parseDouble(placeList.get(4).getPLon())), 17));
         }else if(marker.equals(mRes[0])){
             selection=3;
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(restaurantList.get(0).getRLat()),
@@ -123,6 +146,34 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
             selection=3;
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(restaurantList.get(2).getRLat()),
                     Double.parseDouble(restaurantList.get(2).getRLon())), 17));
+        }else if(marker.equals(mRes[3])){
+            selection=3;
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(restaurantList.get(3).getRLat()),
+                    Double.parseDouble(restaurantList.get(3).getRLon())), 17));
+        }else if(marker.equals(mRes[4])){
+            selection=3;
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(restaurantList.get(4).getRLat()),
+                    Double.parseDouble(restaurantList.get(4).getRLon())), 17));
+        }else if(marker.equals(mCar[0])){
+            selection=4;
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(carList.get(0).getCLat()),
+                    Double.parseDouble(carList.get(0).getCLon())), 17));
+        }else if(marker.equals(mCar[1])){
+            selection=4;
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(carList.get(1).getCLat()),
+                    Double.parseDouble(carList.get(1).getCLon())), 17));
+        }else if(marker.equals(mCar[2])){
+            selection=4;
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(carList.get(2).getCLat()),
+                    Double.parseDouble(carList.get(2).getCLon())), 17));
+        }else if(marker.equals(mCar[3])){
+            selection=4;
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(carList.get(3).getCLat()),
+                    Double.parseDouble(carList.get(3).getCLon())), 17));
+        }else if(marker.equals(mCar[4])){
+            selection=4;
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(carList.get(4).getCLat()),
+                    Double.parseDouble(carList.get(4).getCLon())), 17));
         }else{
             selection=0;
         }
@@ -149,6 +200,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
         mHotel=new Marker[hotelList.size()];
         mPlace=new Marker[placeList.size()];
         mRes=new Marker[restaurantList.size()];
+        mCar=new Marker[carList.size()];
 
         mMap.setOnMarkerClickListener(this);
         mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
@@ -176,6 +228,13 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
                     .icon(BitmapDescriptorFactory.fromResource(R.mipmap.restaurant)));
         }
 
+        for(int j=0;j<carList.size();j++){
+            lat=Double.parseDouble(carList.get(j).getCLat());
+            lon=Double.parseDouble(carList.get(j).getCLon());
+            mCar[j]=mMap.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).title(carList.get(j).getCName())
+                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.car)));
+        }
+
     }
 
     class GetAllLocations extends AsyncTask<String, String, String> {
@@ -192,10 +251,12 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
         private static final String TAG_POSTS = "posts";
         private static final String TAG_POSTS_PLACE = "posts_place";
         private static final String TAG_POSTS_RES = "posts_res";
+        private static final String TAG_POSTS_CAR = "posts_car";
 
         JSONArray posts=null;
         JSONArray posts_place=null;
         JSONArray posts_res=null;
+        JSONArray posts_car=null;
 
         /**
          * Before starting background thread Show Progress Dialog
@@ -231,6 +292,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
                 posts=json.getJSONArray(TAG_POSTS);
                 posts_place=json.getJSONArray(TAG_POSTS_PLACE);
                 posts_res=json.getJSONArray(TAG_POSTS_RES);
+                posts_car=json.getJSONArray(TAG_POSTS_CAR);
 
                 // json success tag
                 success = json.getInt(TAG_SUCCESS);
@@ -267,7 +329,18 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
                         restaurantList.add(r);
                     }
 
-                        return json.getString(TAG_MESSAGE);
+                    for(int j=0;j< posts_car.length();j++){
+                        JSONObject obj=posts_car.getJSONObject(j);
+                        Car c=new Car();
+                        c.setCId(obj.getString("c_id"));
+                        c.setCName(obj.getString("c_name"));
+                        c.setCLat(obj.getString("c_lat"));
+                        c.setCLon(obj.getString("c_lon"));
+
+                        carList.add(c);
+                    }
+
+                    return json.getString(TAG_MESSAGE);
                 } else {
                     Log.d("Login Failure!", json.getString(TAG_MESSAGE));
                     return json.getString(TAG_MESSAGE);

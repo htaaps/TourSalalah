@@ -29,6 +29,7 @@ public class CustomPListAdapter extends BaseAdapter {
     private List<TPlace> placeItems;
     TPlace p;
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
+    public static String place_selection=null;
 
     public CustomPListAdapter(Activity activity, List<TPlace> placeItems) {
         this.activity = activity;
@@ -82,6 +83,7 @@ public class CustomPListAdapter extends BaseAdapter {
                 // Get tpe position
                 p = placeItems.get(position);
                 Intent intent = new Intent(activity, SinglePlace.class);
+                place_selection=p.getPId();
                 // Pass all data rank
                 intent.putExtra("p_name", p.getPName());
                 // Pass all data country

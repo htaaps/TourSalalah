@@ -19,15 +19,15 @@ public class SingleRestaurant extends Activity implements View.OnClickListener{
 
     String r_name,r_details,r_image,r_lat,r_lon;
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
-    Button si_r_map;
+    Button si_r_book;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Get the view from singleitemview.xml
         setContentView(R.layout.single_restaurant);
-        si_r_map=(Button)findViewById(R.id.si_r_map);
-        si_r_map.setOnClickListener(this);
+        si_r_book=(Button)findViewById(R.id.si_r_book);
+        si_r_book.setOnClickListener(this);
 
         Intent i = getIntent();
         // Get the result of rank
@@ -58,10 +58,17 @@ public class SingleRestaurant extends Activity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         switch(v.getId()){
-            case R.id.si_r_map:
-                Intent intent = new Intent(this,MapsActivity.class);
+            case R.id.si_r_book:
+                MainActivity.selection=2;
+                Intent intent = new Intent(this,Login.class);
                 startActivity(intent);
                 break;
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
     }
 }

@@ -24,6 +24,8 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
+import in.htlabs.tapas.toursalalah.adapter.CustomListAdapter;
+
 /**
  * Created by Tapas on 5/30/2015.
  */
@@ -128,13 +130,13 @@ public class HotelBooking extends Activity implements View.OnClickListener {
             // TODO Auto-generated method stub
             // Check for success tag
             String h_id,check_in,check_out,no_rooms,no_adults,no_child,u_id,payment;
-            h_id="1";
+            h_id= CustomListAdapter.hotel_selection;
             check_in=hb_et_cin.getText().toString();
             check_out=hb_et_cout.getText().toString();
             no_rooms=hb_et_room.getText().toString();
             no_adults=hb_et_adult.getText().toString();
             no_child=hb_et_child.getText().toString();
-            u_id="2";
+            u_id=Login.user_selection;
             payment="100";
 
             int success;
@@ -176,7 +178,14 @@ public class HotelBooking extends Activity implements View.OnClickListener {
             if (file_url != null){
                 Toast.makeText(HotelBooking.this, file_url, Toast.LENGTH_LONG).show();
             }
+            Intent i=new Intent(HotelBooking.this,MainActivity.class);
+            startActivity(i);
         }
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
+    }
 }

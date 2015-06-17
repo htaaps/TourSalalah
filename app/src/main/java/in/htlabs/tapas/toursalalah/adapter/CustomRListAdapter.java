@@ -27,6 +27,7 @@ public class CustomRListAdapter extends BaseAdapter {
     private List<Restaurant> restaurantItems;
     Restaurant r;
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
+    public static String restaurant_selection=null;
 
     public CustomRListAdapter(Activity activity, List<Restaurant> restaurantItems) {
         this.activity = activity;
@@ -80,6 +81,7 @@ public class CustomRListAdapter extends BaseAdapter {
                 // Get the position
                 r = restaurantItems.get(position);
                 Intent intent = new Intent(activity, SingleRestaurant.class);
+                restaurant_selection=r.getRId();
                 // Pass all data rank
                 intent.putExtra("r_name", r.getRName());
                 // Pass all data country

@@ -64,4 +64,10 @@ public class SinglePlace extends Activity implements View.OnClickListener{
                 break;
         }
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
+    }
 }
