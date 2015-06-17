@@ -27,7 +27,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".StartActivity"
             android:label="@string/title_activity_maps" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,6 +37,10 @@
         </activity>
         <activity
             android:name=".MapsActivity"
+            android:label="@string/title_activity_maps" >
+        </activity>
+        <activity
+            android:name=".MainActivity"
             android:label="@string/title_activity_maps" >
         </activity>
         <activity
@@ -53,6 +57,14 @@
         </activity>
         <activity
             android:name=".SinglePlace"
+            android:label="@string/title_activity_maps" >
+        </activity>
+        <activity
+            android:name=".CarList"
+            android:label="@string/title_activity_maps" >
+        </activity>
+        <activity
+            android:name=".SingleCar"
             android:label="@string/title_activity_maps" >
         </activity>
         <activity

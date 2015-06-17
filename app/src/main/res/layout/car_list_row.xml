@@ -7,7 +7,7 @@
 
     <!-- Thumbnail Image -->
     <com.android.volley.toolbox.NetworkImageView
-        android:id="@+id/r_image"
+        android:id="@+id/c_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_alignParentLeft="true"
@@ -15,13 +15,12 @@
 
     <!-- Product Name -->
     <TextView
-        android:id="@+id/r_name"
+        android:id="@+id/c_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/r_image"
-        android:layout_toRightOf="@+id/r_image"
+        android:layout_alignTop="@+id/c_image"
+        android:layout_toRightOf="@+id/c_image"
         android:textSize="@dimen/title"
         android:textStyle="bold" />
-
 
 </RelativeLayout>

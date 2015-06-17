@@ -8,16 +8,16 @@
 
     <!-- Thumbnail Image -->
     <com.android.volley.toolbox.NetworkImageView
-        android:id="@+id/si_h_image"
+        android:id="@+id/si_c_image"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginRight="8dp" 
+        android:layout_marginRight="8dp"
         android:layout_gravity="center"/>
 
     <!-- Product Name -->
     <TextView
-        android:id="@+id/si_h_name"
+        android:id="@+id/si_c_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/title"
@@ -25,16 +25,16 @@
 
     <!-- Product Details -->
     <TextView
-        android:id="@+id/si_h_details"
+        android:id="@+id/si_c_details"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dip"
         android:textSize="@dimen/rating" />
 
     <Button
-        android:id="@+id/si_h_book"
+        android:id="@+id/si_c_map"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Book now"/>
+        android:text="Show in map"/>
 
 </LinearLayout>

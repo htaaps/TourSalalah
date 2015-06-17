@@ -2,32 +2,52 @@
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/app/src/debug/res/values/colors.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/CarBooking.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/CarList.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/CustomRListAdapter.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/JSONParser.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/RestaurantBooking.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/RestaurantList.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/SingleCar.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/adapter/CustomCListAdapter.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/adapter/CustomListAdapter.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/adapter/CustomRListAdapter.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/app/AppController.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/model/Hotel.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/model/Restaurant.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/in/htlabs/tapas/toursalalah/util/LruBitmapCache.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/b.jpg" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/bl.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/ba.jpg" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/bl.jpg" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/br.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/car.png" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/chair.png" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/hotel.png" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/list_row_bg.xml" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/list_row_bg_hover.xml" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/list_row_selector.xml" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/restaurant.png" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/s_1.jpg" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/s_2.jpg" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/s_3.jpeg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/s_1.jpg" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/s_10.jpg" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/s_2.jpg" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/s_3.jpg" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/s_4.jpg" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/s_5.jpeg" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/s_6.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/s_5.jpg" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/s_6.jpg" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/s_7.jpg" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/y.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/s_8.jpg" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/s_9.jpg" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/y.png" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/car_booking.xml" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/car_list.xml" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/car_list_row.xml" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/home.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/hotel_list.xml" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/hotel_list_row.xml" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/login.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/register.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/restuarant_booking.xml" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/single_car.xml" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/single_hotel.xml" charset="windows-1252" />
     <file url="PROJECT" charset="UTF-8" />
   </component>

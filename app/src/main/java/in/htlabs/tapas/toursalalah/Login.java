@@ -110,8 +110,23 @@ public class Login extends Activity implements View.OnClickListener {
 
                 if (success == 1) {
                     Log.d("Login Successful!", json.toString());
-                    Intent i = new Intent(Login.this, HotelBooking.class);
-                    startActivity(i);
+                    if(MainActivity.selection==1) {
+                        Intent i = new Intent(Login.this, HotelBooking.class);
+                        startActivity(i);
+                    }
+                    else if(MainActivity.selection==2) {
+                        Intent i = new Intent(Login.this, HotelBooking.class);
+                        startActivity(i);
+                    }
+                    else if(MainActivity.selection==3) {
+                        Intent i = new Intent(Login.this, HotelBooking.class);
+                        startActivity(i);
+                    }
+                    else{
+                        Intent i = new Intent(Login.this, MapsActivity.class);
+                        startActivity(i);
+                    }
+
                     return json.getString(TAG_MESSAGE);
                 }else{
                     Log.d("Login Failure!", json.getString(TAG_MESSAGE));
